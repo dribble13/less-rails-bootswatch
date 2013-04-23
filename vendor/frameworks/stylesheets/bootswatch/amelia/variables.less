@@ -1,7 +1,7 @@
+// Amelia 2.3.1
 // Variables
-// Swatch: Amelia
-// Version: 2.1.1
 // --------------------------------------------------
+
 
 // Global values
 // --------------------------------------------------
@@ -33,7 +33,7 @@
 // Scaffolding
 // -------------------------
 @bodyBackground:        #003F4D;
-@textColor:             rgba(255, 255, 255, 0.9);
+@textColor:             #E1F0F0;
 
 
 // Links
@@ -57,6 +57,24 @@
 @headingsFontWeight:    normal;    // instead of browser default, bold
 @headingsColor:         inherit; // empty to use BS default, @textColor
 
+
+// Component sizing
+// -------------------------
+// Based on 14px font-size and 20px line-height
+
+@fontSizeLarge:         @baseFontSize * 1.25; // ~18px
+@fontSizeSmall:         @baseFontSize * 0.85; // ~12px
+@fontSizeMini:          @baseFontSize * 0.75; // ~11px
+
+@paddingLarge:          20px 24px; // 58px
+@paddingSmall:          8px 12px;  // 34px
+@paddingMini:           4px 8px;   // 28px
+
+@baseBorderRadius:      0;
+@borderRadiusLarge:     6px;
+@borderRadiusSmall:     3px;
+
+
 // Tables
 // -------------------------
 @tableBackground:                   lighten(#147E88, 10%); // overall background-color
@@ -71,7 +89,7 @@
 @btnBorder:                         rgba(0, 0, 0, 0);
 
 @btnPrimaryBackground:              @navbarBackground;
-@btnPrimaryBackgroundHighlight:     spin(@btnPrimaryBackground, 15%);
+@btnPrimaryBackgroundHighlight:     @navbarBackground;
 
 @btnInfoBackground:                 @purple;
 @btnInfoBackgroundHighlight:        @purple;
@@ -93,9 +111,11 @@
 // -------------------------
 @inputBackground:               @white;
 @inputBorder:                   transparent;
-@inputBorderRadius:             0;
+@inputBorderRadius:             @baseBorderRadius;
 @inputDisabledBackground:       @grayLighter;
 @formActionsBackground:         transparent;
+@inputHeight:                   @baseLineHeight + 10px; // base line-height + 8px vertical padding + 2px top/bottom border
+
 
 // Dropdowns
 // -------------------------
@@ -106,7 +126,7 @@
 
 @dropdownLinkColor:             @grayDark;
 @dropdownLinkColorHover:        @white;
-@dropdownLinkColorActive:       @dropdownLinkColor;
+@dropdownLinkColorActive:       @white;
 
 @dropdownLinkBackgroundActive:  @red;
 @dropdownLinkBackgroundHover:   @red;
@@ -115,6 +135,7 @@
 
 // COMPONENT VARIABLES
 // --------------------------------------------------
+
 
 // Z-index master list
 // -------------------------
@@ -130,8 +151,8 @@
 
 // Sprite icons path
 // -------------------------
-@iconSpritePath:          "./twitter/bootstrap/glyphicons-halflings.png";
-@iconWhiteSpritePath:     "./twitter/bootstrap/glyphicons-halflings-white.png";
+@iconSpritePath:          "../img/glyphicons-halflings.png";
+@iconWhiteSpritePath:     "../img/glyphicons-halflings-white.png";
 
 
 // Input placeholder text color
@@ -141,7 +162,7 @@
 
 // Hr border color
 // -------------------------
-@hrBorder:                transparent;
+@hrBorder:                rgba(255, 255, 255, 0.3);
 
 
 // Horizontal forms & lists
@@ -157,6 +178,7 @@
 // Navbar
 // -------------------------
 @navbarCollapseWidth:             979px;
+@navbarCollapseDesktopWidth:      @navbarCollapseWidth + 1;
 
 @navbarHeight:                    50px;
 @navbarBackgroundHighlight:       @red;
@@ -208,20 +230,20 @@
 
 // Form states and alerts
 // -------------------------
-@warningText:             #c09853;
-@warningBackground:       #fcf8e3;
+@warningText:             @textColor;
+@warningBackground:       @orange;
 @warningBorder:           darken(spin(@warningBackground, -10), 3%);
 
-@errorText:               #b94a48;
-@errorBackground:         #f2dede;
+@errorText:               @textColor;
+@errorBackground:         @red;
 @errorBorder:             darken(spin(@errorBackground, -10), 3%);
 
-@successText:             #468847;
-@successBackground:       #dff0d8;
+@successText:             @textColor;
+@successBackground:       @green;
 @successBorder:           darken(spin(@successBackground, -10), 5%);
 
-@infoText:                #3a87ad;
-@infoBackground:          #d9edf7;
+@infoText:                @textColor;
+@infoBackground:          @purple;
 @infoBorder:              darken(spin(@infoBackground, -10), 7%);
 
 

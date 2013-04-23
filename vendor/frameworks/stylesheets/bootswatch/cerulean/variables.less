@@ -1,7 +1,7 @@
+// Cerulean 2.3.1
 // Variables
-// Swatch: Cerulean
-// Version: 2.1.1
 // --------------------------------------------------
+
 
 // GLOBAL VALUES
 // --------------------------------------------------
@@ -57,6 +57,24 @@
 @headingsFontWeight:    bold;    // instead of browser default, bold
 @headingsColor:         #317EAC; // empty to use BS default, @textColor
 
+
+// Component sizing
+// -------------------------
+// Based on 14px font-size and 20px line-height
+
+@fontSizeLarge:         @baseFontSize * 1.25; // ~18px
+@fontSizeSmall:         @baseFontSize * 0.85; // ~12px
+@fontSizeMini:          @baseFontSize * 0.75; // ~11px
+
+@paddingLarge:          11px 19px; // 44px
+@paddingSmall:          2px 10px;  // 26px
+@paddingMini:           0px 6px;   // 22px
+
+@baseBorderRadius:      4px;
+@borderRadiusLarge:     6px;
+@borderRadiusSmall:     3px;
+
+
 // Tables
 // -------------------------
 @tableBackground:                   transparent; // overall background-color
@@ -93,9 +111,11 @@
 // -------------------------
 @inputBackground:               @white;
 @inputBorder:                   #ccc;
-@inputBorderRadius:             3px;
+@inputBorderRadius:             @baseBorderRadius;
 @inputDisabledBackground:       @grayLighter;
 @formActionsBackground:         #f5f5f5;
+@inputHeight:                   @baseLineHeight + 10px; // base line-height + 8px vertical padding + 2px top/bottom border
+
 
 // Dropdowns
 // -------------------------
@@ -106,7 +126,7 @@
 
 @dropdownLinkColor:             @grayDark;
 @dropdownLinkColorHover:        @white;
-@dropdownLinkColorActive:       @dropdownLinkColor;
+@dropdownLinkColorActive:       @white;
 
 @dropdownLinkBackgroundActive:  @linkColor;
 @dropdownLinkBackgroundHover:   @dropdownLinkBackgroundActive;
@@ -115,6 +135,7 @@
 
 // COMPONENT VARIABLES
 // --------------------------------------------------
+
 
 // Z-index master list
 // -------------------------
@@ -130,8 +151,8 @@
 
 // Sprite icons path
 // -------------------------
-@iconSpritePath:          "./twitter/bootstrap/glyphicons-halflings.png";
-@iconWhiteSpritePath:     "./twitter/bootstrap/glyphicons-halflings-white.png";
+@iconSpritePath:          "../img/glyphicons-halflings.png";
+@iconWhiteSpritePath:     "../img/glyphicons-halflings-white.png";
 
 
 // Input placeholder text color
@@ -157,32 +178,33 @@
 // Navbar
 // -------------------------
 @navbarCollapseWidth:             979px;
+@navbarCollapseDesktopWidth:      @navbarCollapseWidth + 1;
 
 @navbarHeight:                    50px;
 @navbarBackgroundHighlight:       lighten(@navbarBackground, 8%);
 @navbarBackground:                @blue;
-@navbarBorder:                    darken(@navbarBackground, 12%);
+@navbarBorder:                    darken(@navbarBackground, 8%);
 
 @navbarText:                      @grayLighter;
 @navbarLinkColor:                 @white;
 @navbarLinkColorHover:            @white;
 @navbarLinkColorActive:           @navbarLinkColorHover;
-@navbarLinkBackgroundHover:       rgba(0,0,0,.2);
-@navbarLinkBackgroundActive:      rgba(0,0,0,.2);
+@navbarLinkBackgroundHover:       darken(@navbarBackground, 12%);
+@navbarLinkBackgroundActive:      darken(@navbarBackground, 12%);
 
 @navbarBrandColor:                @navbarLinkColor;
 
 // Inverted navbar
 @navbarInverseBackground:                @blueDark;
 @navbarInverseBackgroundHighlight:       lighten(@navbarInverseBackground, 5%);
-@navbarInverseBorder:                    rgba(0, 0, 0, 0.1);
+@navbarInverseBorder:                    darken(@navbarInverseBackground, 3%);
 
 @navbarInverseText:                      @white;
 @navbarInverseLinkColor:                 @white;
 @navbarInverseLinkColorHover:            @white;
 @navbarInverseLinkColorActive:           @white;
-@navbarInverseLinkBackgroundHover:       rgba(0,0,0,.05);
-@navbarInverseLinkBackgroundActive:      rgba(0,0,0,.05);
+@navbarInverseLinkBackgroundHover:       darken(@navbarInverseBackground, 6%);
+@navbarInverseLinkBackgroundActive:      darken(@navbarInverseBackground, 6%);
 
 @navbarInverseSearchBackground:          @white;
 @navbarInverseSearchBackgroundFocus:     @white;
@@ -208,19 +230,19 @@
 
 // Form states and alerts
 // -------------------------
-@warningText:             darken(@linkColor, 20%);
-@warningBackground:       lighten(@linkColor, 20%);
+@warningText:             @orange;
+@warningBackground:       #F1CEAB;
 @warningBorder:           darken(spin(@warningBackground, -10), 3%);
 
 @errorText:               darken(#C45559, 5%);
-@errorBackground:         #EDDBE3;
+@errorBackground:         #F2BDB1;
 @errorBorder:             darken(spin(@errorBackground, -10), 3%);
 
 @successText:             darken(@green, 5%);
-@successBackground:       #CDB;
+@successBackground:       #D5ECBF;
 @successBorder:           darken(spin(@successBackground, -10), 5%);
 
-@infoText:                darken(#908A62, 5%);
+@infoText:                darken(@blue, 10%);
 @infoBackground:          #A7DFF1;
 @infoBorder:              darken(spin(@infoBackground, -10), 7%);
 

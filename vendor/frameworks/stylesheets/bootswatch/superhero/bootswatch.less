@@ -1,13 +1,12 @@
-// Bootswatch.less
-// Swatch: Superhero
-// Version: 2.1.1
+// Superhero 2.3.1
+// Bootswatch
 // -----------------------------------------------------
+
 
 // TYPOGRAPHY
 // --------------------------------------------------
 
-@import url(https://fonts.googleapis.com/css?family=Oswald);
-@import url(https://fonts.googleapis.com/css?family=Noticia+Text);
+@import url('//fonts.googleapis.com/css?family=Oswald|Noticia+Text');
 
 h1 small, h2 small, h3 small, h4 small, h5 small, h6 small, h6 {
 	font-family: @headingsFontFamily;
@@ -170,52 +169,39 @@ blockquote.pull-right {
 }
 
 div.subnav {
-	background-color: @blue;
-	background-image: none;
+	margin: 0 1px;
+	background: @blue none;
 	border: none;
 
 	.nav > li > a,
 	.nav > li.active > a {
-		border-left: none;
-		border-right: none;
+		border-color: transparent;
 		color: @textColor;
 	}
 
 	.nav > li > a:hover,
 	.nav > li.active > a:hover {
 		background-color: lighten(@blue, 10%);
-	}
-
-	.nav > li + li > a {
-		border-top: 0px solid transparent;
-	}
-
-	.nav > li:first-child > a,
-	.nav > li:first-child > a:hover,
-	.nav > li.active:first-child > a,
-	.nav > li.active:first-child > a:hover {
-		.border-radius(4px 0 0 4px);
+		border-color: transparent;
 	}
 
 	.nav > li.active > a,
 	.nav > li.active > a:hover {
-		color: @white;
-		background-color: @orange;
-		background-image: none;
+		background: @orange none;
 		.box-shadow(none);
+		color: @white;
 	}
 
 	&.subnav-fixed {
-		top: 70px;
+		top: @navbarHeight + 1;
+		margin: 0;
 		.box-shadow(none);
 
 		.nav > li > a,
-		.nav > li.active > a,
 		.nav > li > a:hover,
+		.nav > li.active > a,
 		.nav > li.active > a:hover {
 			border-color: transparent;
-			padding-left: 12px;
-			padding-right: 12px;
 			.border-radius(0);
 		}
 
@@ -240,29 +226,35 @@ div.subnav {
 }
 
 .nav-list {
+
 	padding: 0 15px;
+
+	& > li > a, 
+	& > .nav-header {
+		text-shadow: none;
+		color: @textColor;
+	}
+
+	.active > a,
+	.active > a:hover {
+		text-shadow: none;
+		color: @white;
+	}
+	
+	li > a:hover {
+		background-color: lighten(@blue, 10%);
+	}
+
 }
 
-.nav-list > li > a, .nav-list .nav-header {
-	text-shadow: none;
-	color: @textColor;
-}
-
-.nav-list .active > a, .nav-list .active > a:hover {
-	text-shadow: none;
-	color: @white;
-}
-
-.nav-list li > a:hover {
-	background-color: lighten(@blue, 10%);
-}
-
-.nav-tabs, .nav-tabs.nav-stacked > li > a {
+.nav-tabs,
+.nav-tabs.nav-stacked > li > a {
 	border-color: transparent;
 }
 
 .nav-tabs {
-	> li > a {
+
+	& > li > a {
 		background-color: @blue;
 		color: @textColor;
 	}
@@ -282,14 +274,21 @@ div.subnav {
 	}
 }
 
-.nav-pills > li > a {
-	color: @textColor;
-	background-color: @blue;
-}
+.nav-pills {
 
-.nav-pills > li:hover > a {
-	background-color: lighten(@blue, 10%);
-	border-color: transparent;
+	& > li > a {
+		color: @textColor;
+		background-color: @blue;
+	}
+
+	& > li > a:hover {
+		background-color: lighten(@blue, 10%);
+		border-color: transparent;
+	}
+
+	& > .disabled > a:hover {
+		background-color: @blue;
+	}
 }
 
 .nav-tabs .open .dropdown-toggle,
@@ -339,33 +338,40 @@ div.subnav {
 		border-color: transparent;
 	}
 
-	li > a {
+	ul > li > a,
+	ul > li > span {
 		border: none;
 		color: @textColor;
 	}
 
-	li.active > a,
-	li.active > a:hover {
+	ul > li > a:hover {
+		background: lighten(@blue, 10%);
+	}
+
+	ul > .active > a,
+	ul > .active > a:hover,
+	ul > .active > span,
+	ul > .active > span:hover {
 		background-color: @orange;
 		color: @white;
 	}
 
-	li > a:hover {
-		background: lighten(@blue, 10%);
-	}
-
-	li.disabled > a,
-	li.disabled > a:hover {
+	ul > .disabled > a,
+	ul > .disabled > a:hover,
+	ul > .disabled > span,
+	ul > .disabled > span:hover {
 		background: darken(@blue, 5%);
 	}
 }
 
 .pager {
 
-	a {
-		color: @textColor;
+	li > a,
+	li > span {
+
 		background-color: @blue;
-		border-color: transparent;
+		border: none;
+		color: @textColor;
 
 		&:hover {
 			background: lighten(@blue, 10%);
