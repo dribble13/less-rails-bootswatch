@@ -18,5 +18,5 @@ Gem::Specification.new do |gem|
   gem.require_paths = ["lib"]
   gem.version       = Less::Rails::Bootswatch::VERSION
 
-  gem.add_runtime_dependency "less-rails-bootstrap", "~> 2.1.0"
+  gem.add_runtime_dependency "less-rails-bootstrap", "~> 2"
 end
